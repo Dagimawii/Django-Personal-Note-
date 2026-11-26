@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Home page {% endblock title %}
+{% block content %}
+<div class="content text-center p-3">
+    <h1 class="p-2 text-center text-dark bg-white rounded">DJANGO PERSONAL NOTE PROJECT</h1>
+    <h3 class="text-white">Get Started Your Personal Note</h3>
+    <a class="btn btn-primary" href="{% url 'register' %}">SignUP</a>
+    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+</div>
+{% endblock content %}

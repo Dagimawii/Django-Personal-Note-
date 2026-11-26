@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Login page {% endblock title %}
+{% block content %}
+
+<div class="content d-flex justify-content-center align-items-center ">
+    <div class="login-form p-3 py-4 bg-light rounded">
+        <h3 class="text-center mb-4">Login</h3>
+         <form action="{% url 'login' %}" method = 'POST'>
+             {% csrf_token %}
+             <div class="form-group">
+                 <label for="username">username</label>
+                 <input type="text" name = 'username' required class="form-control">
+             </div>
+         
+             <div class="form-group">
+                 <label for="password">password</label>
+                 <input type="password" name = 'password' required class="form-control">
+             </div>
+             <div class="error">
+                {% if error %}
+                 <h6 class=" error text-center text-danger ">{{error}}</h6>
+             {% endif %}
+             </div>
+             <div class="button text-center ">
+                <button type ="Submit" class="form-control mt-3 btn btn-primary">Login</button>
+             </div>
+         </form>
+        <p>you don't have account? <a href="{% url 'register' %}">register here</a></p>
+    </div>
+</div>
+
+{% endblock content %}
